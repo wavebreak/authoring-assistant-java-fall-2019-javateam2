@@ -3,6 +3,17 @@ import java.util.Scanner;
 public class AuthoringAssistant {
    static Scanner scanner = new Scanner(System.in);
 
+   public static int getNumOfNonWSCharacters(String userInput) {
+      int count = 0;
+
+      for (int i = 0; i < userInput.length(); i++) {
+         if(!Character.isSpaceChar(userInput.charAt(i))) {
+            count++;
+         }
+      }
+
+      return count;
+   }
 
    public static char printMenu() {
        char menuOp;
@@ -29,6 +40,8 @@ public class AuthoringAssistant {
       System.out.println("Enter a sample text:");
       userInput = scanner.nextLine();
       System.out.println("You entered:" + userInput);
+
+      System.out.println(getNumOfNonWSCharacters(userInput));
 
       char q;
       do {
