@@ -10,6 +10,7 @@ public class AuthoringAssistant {
       System.out.println("Enter a sample text:");
       userInput = scanner.nextLine();
       System.out.println("You entered:" + userInput);
+      //ignore this comment
 
 
    }
