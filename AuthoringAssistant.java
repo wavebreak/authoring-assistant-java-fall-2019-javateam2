@@ -4,7 +4,9 @@ public class AuthoringAssistant {
    static Scanner scanner = new Scanner(System.in);
 
 
-   public static void printMenu() {
+   public static char printMenu() {
+       char menuOp;
+
       System.out.println("MENU");
       System.out.println("c - Number of non-whitespace characters");
       System.out.println("w - Number of words");
@@ -13,7 +15,8 @@ public class AuthoringAssistant {
       System.out.println("s - Shorten spaces");
       System.out.println("q - Quit");
       System.out.println("\nChoose an option:");
-
+      menuOp = scanner.next().charAt(0);
+      return menuOp;
    }
 
 
@@ -29,7 +32,7 @@ public class AuthoringAssistant {
 
       char q;
       do {
-         printMenu();
+         menuOp = printMenu();
       } while (menuOp != 'q');
    }
 }
