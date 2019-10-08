@@ -31,6 +31,17 @@ public class AuthoringAssistant {
       return numWords;
    }
 
+
+
+
+
+
+
+
+
+
+
+
    public static String replaceExclamation(String userInput) {
 
       userInput = userInput.replace('!', '.');
@@ -58,12 +69,11 @@ public class AuthoringAssistant {
       /* Type your code here. */
 
       String userInput;
-      String newInput;
       char menuOp = 'o';
 
       System.out.println("Enter a sample text:");
       userInput = scanner.nextLine();
-      System.out.println("You entered: " + userInput);
+      System.out.println("You entered:" + userInput);
 
 
 
