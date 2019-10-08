@@ -32,6 +32,16 @@ public class AuthoringAssistant {
       return numWords;
    }
 
+    public static String shortenSpace(String usrStr) {
+        String space = " ";
+        String space2 = space + space;
+
+        while (usrStr.indexOf(space2) != -1) {
+            usrStr=usrStr.replace(space2, space);
+        }
+        return usrStr;
+    }
+
    public static char printMenu() {
       char menuOp;
       System.out.println("\n");
@@ -73,12 +83,14 @@ public class AuthoringAssistant {
                break;
 
             case 'f':
+
                break;
 
             case 'r':
                break;
 
             case 's':
+                System.out.println(shortenSpace(userInput));
                break;
          }
       } while (menuOp != 'q');
