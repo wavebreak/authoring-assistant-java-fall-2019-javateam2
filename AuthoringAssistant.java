@@ -32,10 +32,21 @@ public class AuthoringAssistant {
       return numWords;
    }
 
+    //replaces all exclamation points with periods
+    public static String replaceExclamation(String userInput) {
 
-//n
+        userInput = userInput.replace('!', '.');
 
-   public static String shortenSpace(String usrStr) {
+        return userInput;
+    }
+
+
+
+
+
+
+
+    public static String shortenSpace(String usrStr) {
         String space = " ";
         String space2 = space + space;
 
@@ -70,7 +81,7 @@ public class AuthoringAssistant {
 
       System.out.println("Enter a sample text:");
       userInput = scanner.nextLine();
-      System.out.println("You entered:" + userInput);
+      System.out.println("You entered: " + userInput);
 
 
 
