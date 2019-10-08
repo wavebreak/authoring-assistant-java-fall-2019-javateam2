@@ -33,7 +33,7 @@ public class AuthoringAssistant {
    }
 
 
-
+//n
 
    public static String shortenSpace(String usrStr) {
         String space = " ";
