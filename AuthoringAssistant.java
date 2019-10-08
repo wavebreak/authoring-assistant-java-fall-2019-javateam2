@@ -20,6 +20,7 @@ public class AuthoringAssistant {
    //counts number of words in string
    public static int getNumOfWords(String userInput) {
       int numWords = 0;
+      userInput = shortenSpace(userInput);
 
       for(int i = 0; i < userInput.length(); i++) {
          if(Character.isSpaceChar(userInput.charAt(i))) {
@@ -32,33 +33,44 @@ public class AuthoringAssistant {
       return numWords;
    }
 
-    //replaces all exclamation points with periods
-    public static String replaceExclamation(String userInput) {
+   //replaces all exclamation points with periods
+   public static String replaceExclamation(String userInput) {
 
-        userInput = userInput.replace('!', '.');
+      userInput = userInput.replace('!', '.');
 
-        return userInput;
-    }
+      return userInput;
+   }
 
+   public static int findText(String wordFind, String userInput) {
+      int count = 0;
+      String placeHolder[] = userInput.split(" ");
+      //this makes userInput into a placeholder string array, and splits up to make it easier
+      // to search through it character by character
 
+      //searches through placeholder array for the word we search for
+      //FIXME this doesn't work for multiple words/a phrase yet
+      for(int i = 0; i < placeHolder.length; ++i) {
+         if(wordFind.equals(placeHolder[i])) {
+            count++;
+         }
+      }
 
+      return count;
+   }
 
+   public static String shortenSpace(String usrStr) {
+      String space = " ";
+      String space2 = space + space;
 
-
-
-    public static String shortenSpace(String usrStr) {
-        String space = " ";
-        String space2 = space + space;
-
-        while (usrStr.indexOf(space2) != -1) {
-            usrStr=usrStr.replace(space2, space);
-        }
-        return usrStr;
-    }
+      while (usrStr.indexOf(space2) != -1) {
+         usrStr=usrStr.replace(space2, space);
+      }
+      return usrStr;
+   }
 
    public static char printMenu() {
       char menuOp;
-      System.out.println("\n");
+      System.out.println();
       System.out.println("MENU");
       System.out.println("c - Number of non-whitespace characters");
       System.out.println("w - Number of words");
@@ -74,15 +86,14 @@ public class AuthoringAssistant {
 
    public static void main(String[] args) {
 
-
       String userInput;
       String newInput;
+      String wordFind;
       char menuOp = 'o';
 
-      System.out.println("Enter a sample text:");
+      System.out.println("Enter a sample text:\n");
       userInput = scanner.nextLine();
       System.out.println("You entered: " + userInput);
-
 
 
       char q;
@@ -98,16 +109,21 @@ public class AuthoringAssistant {
                break;
 
             case 'f':
+               System.out.println("Enter a word or phrase to be found:");
+               wordFind = scanner.next();
+               //FIXME: for some reason when I use nextLine() it doesn't let me input a string
+               // so it doesn't work for phrases yet
 
+               System.out.println( "\"" + wordFind + "\" instances: " + findText(wordFind, userInput));
                break;
 
             case 'r':
                newInput = replaceExclamation(userInput);
-               System.out.println(newInput);
+               System.out.println("Edited text:" + newInput);
                break;
 
             case 's':
-                System.out.println(shortenSpace(userInput));
+               System.out.println("Edited text:" + shortenSpace(userInput));
                break;
          }
       } while (menuOp != 'q');
