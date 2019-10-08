@@ -62,6 +62,7 @@ public class AuthoringAssistant {
 
 
       String userInput;
+      String newInput;
       char menuOp = 'o';
 
       System.out.println("Enter a sample text:");
@@ -83,10 +84,12 @@ public class AuthoringAssistant {
                break;
 
             case 'f':
-//n
+
                break;
 
             case 'r':
+               newInput = replaceExclamation(userInput);
+               System.out.println(newInput);
                break;
 
             case 's':
