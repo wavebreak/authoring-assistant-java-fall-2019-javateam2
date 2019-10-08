@@ -12,8 +12,9 @@ public class AuthoringAssistant {
             count++;
          }
       }
-
+      System.out.print("Number of non-whitespace characters: ");
       return count;
+
    }
 
    //counts number of words in string
@@ -27,13 +28,13 @@ public class AuthoringAssistant {
       }
       //this adds one more to the word count to account for the last word w/ no space after
       numWords = numWords + 1;
-
+      System.out.print("Number of words: ");
       return numWords;
    }
 
    public static char printMenu() {
       char menuOp;
-
+      System.out.println("\n");
       System.out.println("MENU");
       System.out.println("c - Number of non-whitespace characters");
       System.out.println("w - Number of words");
@@ -48,7 +49,7 @@ public class AuthoringAssistant {
    }
 
    public static void main(String[] args) {
-      /* Type your code here. */
+
 
       String userInput;
       char menuOp = 'o';
