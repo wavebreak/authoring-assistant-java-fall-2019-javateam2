@@ -32,7 +32,10 @@ public class AuthoringAssistant {
       return numWords;
    }
 
-    public static String shortenSpace(String usrStr) {
+
+
+
+   public static String shortenSpace(String usrStr) {
         String space = " ";
         String space2 = space + space;
 
