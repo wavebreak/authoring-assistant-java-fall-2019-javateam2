@@ -41,34 +41,6 @@ public class AuthoringAssistant {
       return userInput;
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    public static int findText(String wordFind, String userInput) {
       int count = 0;
       int i;
