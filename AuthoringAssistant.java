@@ -95,11 +95,11 @@ public class AuthoringAssistant {
          menuOp = printMenu();
          switch(menuOp) {
             case 'c':
-               System.out.println(getNumOfNonWSCharacters(userInput));
+               System.out.println("Number of non-whitespace characters: " + getNumOfNonWSCharacters(userInput));
                break;
 
             case 'w':
-               System.out.println(getNumOfWords(userInput));
+               System.out.println("Number of words: " + getNumOfWords(userInput));
                break;
 
             case 'f':
