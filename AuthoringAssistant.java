@@ -41,20 +41,42 @@ public class AuthoringAssistant {
       return userInput;
    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    public static int findText(String wordFind, String userInput) {
       int count = 0;
-      String placeHolder[] = userInput.split(" ");
-      //this makes userInput into a placeholder string array, and splits up to make it easier
-      // to search through it character by character
+      int i;
 
-      //searches through placeholder array for the word we search for
-      //FIXME this doesn't work for multiple words/a phrase yet
-      for(int i = 0; i < placeHolder.length; ++i) {
-         if(wordFind.equals(placeHolder[i])) {
-            count++;
-         }
+      while ((i = userInput.indexOf(wordFind)) !=-1) {
+         userInput = userInput.substring(i + wordFind.length());
+         count += 1;
       }
-
       return count;
    }
 
@@ -111,10 +133,8 @@ public class AuthoringAssistant {
             case 'f':
                System.out.println("Enter a word or phrase to be found:");
                wordFind = scanner.next();
-               //FIXME: for some reason when I use nextLine() it doesn't let me input a string
-               // so it doesn't work for phrases yet
-
-               System.out.println( "\"" + wordFind + "\" instances: " + findText(wordFind, userInput));
+               int count = findText(wordFind, userInput);
+               System.out.println( "\"" + wordFind + "\" instances: " + count);
                break;
 
             case 'r':
